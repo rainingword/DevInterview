@@ -1,0 +1,22 @@
+<!--考查理由：如果不能主动地运用闭包特性实现特定的功能，就可以说这个程序员不懂js-->
+<!--点击按钮为什么不显示0,1,2,修改代码使之分别显示0,1,2-->
+
+<html>
+<head>
+</head>
+<body>
+<button class="myClass">button1</button><br>
+<button class="myClass">button2</button><br>
+<button class="myClass">button3</button><br>
+</body>
+<script type="text/javascript" >
+    var elems = document.getElementsByClassName("myClass"),
+        i;
+    for (i = 0; i < elems.length; i++) {
+        elems[i].addEventListener("click", function () {
+            "use strict";
+            this.innerHTML = i;
+        });
+    }
+</script>
+</html>
